@@ -1,3 +1,12 @@
-h1 {
-  color: red;
+#sortable {
+  height: 490px;
+  width: 175px;
+  border: 1px solid black;
+}
+.leftpics {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
