@@ -2,6 +2,8 @@
   height: 490px;
   width: 175px;
   border: 1px solid black;
+  float: left;
+  background-color: lightblue;
 }
 .leftpics {
   display: block;
@@ -9,4 +11,20 @@
   margin-left: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+#stage {
+  border-radius: 25px;
+   border: 1px solid black;
+   width: 525px;
+   height: 490px;
+   float: left;
+   margin-left: 10px
+}
+#rightBox {
+  height: 490px;
+  width: 175px;
+  border: 1px solid black;
+  float: left;
+  margin-left: 10px;
+  background-color: lightblue;
 }

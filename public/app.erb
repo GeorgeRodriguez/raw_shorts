@@ -10,18 +10,41 @@
             placeholder: "ui-sortable-placeholder"
         });
     });
+    function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
 </script>
     <meta charset="utf-8">
     <title>drag app</title>
   </head>
   <body>
-<div id="sortable" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img class="leftpics" src="https://unsplash.it/150/150/?image=1074" alt="random"
-  dragable="true" ondragstart="drag(event)" width="150" height="150">
-  <img class="leftpics" src="https://unsplash.it/150/150/?image=1084" alt="random"
-  dragable="true" ondragstart="drag(event)" width="150" height="150">
-  <img class="leftpics" src="https://unsplash.it/150/150/?image=1069" alt="random"
-  dragable="true" ondragstart="drag(event)" width="150" height="150">
+<div id="sortable">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=1074" alt="random">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=1084" alt="random">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=1069" alt="random">
+</div>
+
+<div id="stage" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<div id="rightBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=1024" alt="random"
+  draggable="true" ondragstart="drag(event)" id="drag1">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=1020" alt="random"
+  draggable="true" ondragstart="drag(event)" id="drag2">
+  <img class="leftpics" src="https://unsplash.it/150/150/?image=943" alt="random"
+  draggable="true" ondragstart="drag(event)" id="drag3">
+
 </div>
   </body>
 </html>
