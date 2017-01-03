@@ -4,31 +4,19 @@
     <link rel="stylesheet" href="app.css">
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-    <script>
-    $(function() {
-        $( "#sortable" ).sortable({
-            placeholder: "ui-sortable-placeholder"
-        });
-    });
-    function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-
-</script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <meta charset="utf-8">
     <title>drag app</title>
   </head>
   <body>
+    <div class="lines">
+      <ul class="titles">
+        <li class="ca">Column A</li>
+        <li class="cb">Column B</li>
+      </ul>
+    </div>
+    <div class="col s12 m6">
 <div id="sortable">
   <img class="leftpics" src="https://unsplash.it/150/150/?image=1074" alt="random">
   <img class="leftpics" src="https://unsplash.it/150/150/?image=1084" alt="random">
@@ -45,6 +33,7 @@ function drop(ev) {
   <img class="leftpics" src="https://unsplash.it/150/150/?image=943" alt="random"
   draggable="true" ondragstart="drag(event)" id="drag3">
 
+</div>
 </div>
   </body>
 </html>
