@@ -1,18 +1,20 @@
-$(function() {
-    $( "#sortable" ).sortable({
-        placeholder: "ui-sortable-placeholder"
-    });
-});
-function allowDrop(ev) {
-ev.preventDefault();
-}
+$( function() {
+  $( "#sortable1" ).sortable({
+    items: "li:not(.ui-state-disabled)"
+  });
+  $( "#sortable1 li, #sortable2 li" ).disableSelection();
+} );
+$( function() {
+  $( "#draggable" ).draggable({ revert: "valid" });
+  $( "#draggable2" ).draggable({ revert: "invalid" });
+  $( "#draggable3" ).draggable({ revert: "invalid" });
+  $( "#draggable4" ).draggable({ revert: "invalid" });
 
-function drag(ev) {
-ev.dataTransfer.setData("text", ev.target.id);
-}
 
-function drop(ev) {
-ev.preventDefault();
-var data = ev.dataTransfer.getData("text");
-ev.target.appendChild(document.getElementById(data));
-}
+  $( "#droppable" ).droppable({
+    classes: {
+      "ui-droppable-active": "ui-state-active",
+      "ui-droppable-hover": "ui-state-hover"
+    },
+  });
+} );
